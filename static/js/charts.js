@@ -166,3 +166,13 @@ function buildCharts(sample) {
     Plotly.newPlot("gauge", gaugeData, gaugeLayout);
   });
 }
+
+function changeChartVisibility(option) {
+  var element = document.getElementById(option);
+  if (element.style.display === "none") {
+    element.style.display = "block";
+  }
+  else {
+    element.style.display = "none";
+  }
+}

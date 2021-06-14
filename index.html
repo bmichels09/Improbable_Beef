@@ -9,8 +9,20 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 
-<body>
+<!-- Style edits: added background color to page, added background image for jumbotron, added navbar to toggle each chart on and off -->
 
+<style>
+    body {
+        background-color: rgb(224, 240, 255);
+    }
+    
+    .jumbotron {
+        background-image: url("static/images/jumbotron-faded.jpg");
+        background-size: cover;
+    }
+</style>
+
+<body>
   <div class="container">
     <div class="row">
       <div class="col-md-12 jumbotron text-center">
@@ -32,14 +44,28 @@
           <div id="sample-metadata" class="panel-body"></div>
         </div>
       </div>
-      <div class="col-md-5">
-        <div id="bar"></div>
-      </div>
-      <div class="col-md-5">
-        <div id="gauge"></div>
+      <div class="col-md-10">
+        <nav class="navbar navbar-default">
+            <div class="navbar-header">
+                <a class="navbar-brand">Toggle Charts: </a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a onclick="changeChartVisibility('bar')" href="#">Bar</a></li>
+                <li><a onclick="changeChartVisibility('gauge')" href="#">Gauge</a></li>
+                <li><a onclick="changeChartVisibility('bubble')" href="#">Bubble</a></li>
+            </ul>
+        </nav>
+        <div class="row">
+            <div class="col-md-6">
+                <div id="bar"></div>
+            </div>
+            <div class="col-md-6">
+                <div id="gauge"></div>
+        </div>
+        </div>
       </div>
     </div>
-    <div class="row">
+    <div class="row" style="padding-top: 24px">
       <div class="col-md-12">
         <div id="bubble"></div>
       </div>
